@@ -1,0 +1,20 @@
+\section{Modelo de predicción}
+
+La identificación de parcelas con pasturas forrajeras se formuló como un problema de clasificación supervisada a nivel de píxel, orientado a discriminar la clase forraje frente a no forraje a partir de variables espectrales e índices de vegetación derivados de imágenes PlanetScope. El modelo estima, para cada píxel, la probabilidad de pertenencia a la clase forraje, de manera que dicha probabilidad pueda utilizarse como un proxy cuantitativo de presencia de cobertura forrajera dentro de áreas asociadas a sistemas con componente silvopastoril. 
+
+ 
+
+Dado que los datos exhiben autocorrelación espacial (píxeles cercanos tienden a compartir características espectrales) y posibles diferencias sistemáticas entre zonas, la evaluación del desempeño se estructuró como una validación espacial. En particular, se implementó un esquema de hold-out espacial, reservando la zona C como conjunto de prueba externo, mientras que el entrenamiento se realizó con las observaciones de las demás zonas. Este diseño permite evaluar la capacidad de generalización del clasificador en una ubicación no utilizada durante el ajuste y reduce el riesgo de sobreestimar el desempeño por dependencia espacial dentro de una misma zona. 
+
+ 
+
+El modelo se estimó mediante Random Forest, dado que este algoritmo puede capturar relaciones no lineales e interacciones entre variables espectrales e índices de vegetación, características de problemas de clasificación a nivel de píxel. La calibración de hiperparámetros se realizó mediante búsqueda en grilla, evaluando 255 combinaciones (Tabla \ref{tab:grid_params}). La especificación seleccionada fue aquella que optimizó el desempeño del clasificador durante el ajuste, utilizando como criterio la métrica F1, que busca un balance entre precisión y recall. En este contexto, la precisión mide qué proporción de los píxeles que el modelo predice como pasturas forrajeras corresponde efectivamente a pasturas según los polígonos de referencia, mientras que el recall mide qué proporción de los píxeles de pasturas presentes en los polígonos de referencia es correctamente identificada por el modelo. Bajo este criterio, la configuración seleccionada fue: 100 árboles, profundidad máxima = 3, máximo de predictores por partición = √p y tamaño mínimo de hoja = 2. 
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{Parámetros de búsqueda en grilla}
+    \label{tab:grid_params}
+    \input{visuals/tables/table_grid_search}
+\end{table}
+ 

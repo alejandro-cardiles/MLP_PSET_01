@@ -1,0 +1,60 @@
+\section{Datos}
+
+
+\subsection{Datos de referencia}
+
+Para el componente silvopastoril, la información de referencia provino de polígonos geolocalizados de parcelas demostrativas del CIAT conteniendo pasturas forrajeras ubicadas en tres zonas del país. La figura \ref{fig:par_demostrativas} muestra la ubicación de estas parcelas que para efectos del análisis, fueron denominadas A, B, C y D. Por su ubicación, consideramos las parcelas B y D parte de una misma zona ya que se encuentran separadas por apenas 60 metros. En contraste, la parcela C se ubica a 46,45 km de ese par, mientras que la parcela A es la más distante, localizada a 234,60 km. 
+
+\begin{figure}[H]
+    \centering
+    \caption{Parcelas demostrativas del CIAT con pasturas forrajeras}
+    \includegraphics[width=0.5\textwidth]{visuals/img/location_plots.png}
+    \label{fig:par_demostrativas}
+\end{figure}
+
+
+%%%----- imagen 
+
+Estas parcelas demostrativas fueron establecidas en momentos distintos, por lo que los datos de referencia corresponden únicamente a las fechas en las que la cobertura forrajera era detectable. La Tabla \ref{tab:forraje_planet} presenta (columna 2) las fechas para las cuales se tiene certeza de la presencia de forraje en cada parcela: la observación más antigua corresponde a la parcela D (2022-07-22) y la más reciente a la parcela A (2025-02-28). Adicionalmente, la disponibilidad de observaciones no es homogénea: las parcelas A y D cuentan con tres observaciones temporales, mientras que las parcelas B y C disponen de una observación cada una. 
+
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{Conteo y proporción de forraje por fecha}
+    \label{tab:forraje_planet}
+    \input{visuals/tables/table_planet_download_time} 
+\end{table}
+
+
+
+
+
+\subsection{Datos Satelitales}
+
+Para estas primeras aproximaciones se emplearon imágenes PlanetScope (producto Surface Reflectance), con cobertura diaria y resolución espacial de 3 m. Cada escena incluye ocho bandas espectrales (Coastal Blue, Blue, Green I, Green, Yellow, Red, Red Edge y NIR), las cuales se utilizaron como insumo para derivar índices espectrales de vegetación asociados a vigor y productividad de la cobertura. 
+
+ 
+Dado que, para el componente silvopastoril/forrajes, no se dispone de una serie temporal continua perfectamente alineada con las fechas de certeza en terreno, se seleccionó para cada parcela la escena de PlanetScope más cercana a la fecha en la que se tiene confirmación de presencia de forraje, priorizando escenas con baja interferencia por nubes y sombras. La Tabla \ref{tab:forraje_planet} consolida esta correspondencia: la columna (3) reporta el día de la escena PlanetScope utilizada; la columna (4) indica la diferencia en días entre la fecha de certeza del dato de referencia (columna (2)) y la fecha de la escena PlanetScope (columna (3)), conservando el signo para reflejar si la imagen es anterior o posterior a la fecha de certeza. Esta selección se realizó para evitar obstrucciones como nubes o sombras. Finalmente, la columna (5) presenta el número de píxeles que corresponden a las parcelas con forrajes de la escena analizada, mientras que la columna (6) reporta el número de píxeles sin forraje en esa misma escena. 
+
+
+\subsection{Preparación de datos para predicción }
+
+Con el fin de asegurar consistencia entre las etiquetas derivadas de los datos de referencia y los predictores espectrales de PlanetScope, el set de entrenamiento se construyó a nivel de píxel para cada una de las escenas seleccionadas en la Tabla \ref{tab:forraje_planet}. En primer lugar, los polígonos georreferenciados de las parcelas demostrativas se proyectaron sobre la grilla de 3 m de PlanetScope y se rasterizaron para identificar los píxeles ubicados dentro de la cobertura forrajera (clase forraje) y los píxeles ubicados fuera de dicha cobertura (clase no forraje) dentro del recorte analizado. 
+
+ 
+
+Para reducir la mezcla de clases por efectos de borde y minimizar la contaminación espacial entre coberturas adyacentes, se aplicó un buffer de 10–20 m alrededor de los límites de las coberturas de interés. Este ajuste buscó excluir píxeles en zonas de transición donde la señal espectral puede representar combinaciones de forraje y coberturas vecinas, y donde la asignación de clase es más incierta. 
+
+ 
+
+A partir de los píxeles retenidos tras el buffer, se extrajeron como variables predictoras las bandas espectrales y los índices de vegetación derivados de cada escena donde se calcularon cuatro índices (NDVI, EVI, FAPAR y NIRv), siguiendo la metodología propuesta por \textcolor{red}{Referencia}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Índices espaciales de parcelas demostrativas }
+    \includegraphics[width=0.9\textwidth]{visuals/img/index.png}
+    \label{fig:index_satelite}
+\end{figure}
+
+  

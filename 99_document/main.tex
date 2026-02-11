@@ -1,0 +1,169 @@
+\documentclass[11pt,onecolumn]{article}
+
+% -------------------------------------------------
+% Page layout
+% -------------------------------------------------
+\usepackage[margin=1.5in]{geometry}
+
+% -------------------------------------------------
+% Fonts and encoding
+% -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+% -------------------------------------------------
+% Math
+% -------------------------------------------------
+\usepackage{amsmath, amsfonts, amsthm, bbm}
+
+% -------------------------------------------------
+% Tables
+% -------------------------------------------------
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{dcolumn}
+\usepackage[table]{xcolor}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% -------------------------------------------------
+% Figures
+% -------------------------------------------------
+\usepackage{graphicx}
+\usepackage[labelsep=period]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{rotating}
+%\usepackage{rotfloat}
+
+% -------------------------------------------------
+% Spacing and structure
+% -------------------------------------------------
+\usepackage{setspace}
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\renewcommand{\baselinestretch}{1}
+
+% -------------------------------------------------
+% Footnotes
+% -------------------------------------------------
+\usepackage[bottom]{footmisc}
+\setlength\footnotemargin{5pt}
+
+% -------------------------------------------------
+% Citations
+% -------------------------------------------------
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+% -------------------------------------------------
+% Utility packages
+% -------------------------------------------------
+\usepackage{placeins}
+\usepackage{comment}
+\usepackage{soul}
+\usepackage{xspace}
+\newcommand\nth{\textsuperscript{th}\xspace}
+
+% -------------------------------------------------
+% Landscape
+% -------------------------------------------------
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{multicol}
+
+% -------------------------------------------------
+% TikZ
+% -------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{
+  decorations,
+  decorations.text,
+  shapes.geometric,
+  arrows.meta,
+  automata
+}
+
+\definecolor{timeline2015}{RGB}{212,212,212}
+\definecolor{timeline2016}{RGB}{48,201,204}
+\definecolor{timeline2017}{RGB}{45,87,204}
+\definecolor{timeline2018}{RGB}{162,45,204}
+\definecolor{timeline2019}{RGB}{82,45,204}
+
+% -------------------------------------------------
+% Theorem environments
+% -------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{note}{Note}
+
+% -------------------------------------------------
+% Hyperref (LAST)
+% -------------------------------------------------
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=blue
+]{hyperref}
+\def\UrlBreaks{\do\/\do-}
+
+% -------------------------------------------------
+% Title and authors
+% -------------------------------------------------
+\title{Italia.....%}
+\thanks{We thank ... All errors are our own.}}
+
+\author{
+Alejandro Cardiles\thanks{Department of Economics, University of Los Andes, Colombia.
+\href{mailto:a.cardilesh@uniandes.edu.co}{a.cardilesh@uniandes.edu.co}}
+}
+
+\date{\today}
+
+% -------------------------------------------------
+\begin{document}
+% -------------------------------------------------
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent
+\end{abstract}
+
+\medskip
+\begin{flushleft}
+\textbf{Keywords:} \\
+\textbf{JEL Classification:}
+\end{flushleft}
+
+\pagebreak
+\doublespacing
+
+%------------------------%
+% Sections
+%-----------------------%
+
+% \input{sections/01_contexto}
+% \input{sections/02_datos}
+% \input{sections/03_modelos}
+% \input{sections/04_resultados}
+
+\end{document}
