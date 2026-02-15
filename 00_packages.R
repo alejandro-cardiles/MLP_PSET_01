@@ -10,7 +10,14 @@ require(pacman)
 #
 p_load(rio, 
        tidyverse, 
-      janitor, 
-    
-      sf)
+       janitor, 
+       sf,
+
+       # ploting
+       ggtext,
+       scales,
+       tmap, #background mao
+
+       # data
+       eurostat)
 
