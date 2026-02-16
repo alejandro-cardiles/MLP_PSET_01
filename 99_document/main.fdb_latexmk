@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1771255891.53478 "main.aux" "main.bbl" "main" 1771257239.84894 0
+["bibtex main"] 1771255891.53478 "main.aux" "main.bbl" "main" 1771278451.23328 0
   "./sections/references.bib" 1771255026 3488 bdb63afcff9fe959a049d7219bb6dfe1 ""
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-dist/bibtex/bst/base/apalike.bst" 1748869072 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1771257239 2318 74b92f592e52ec21c683bbc2e8fe7311 "pdflatex"
+  "main.aux" 1771278449 2318 74b92f592e52ec21c683bbc2e8fe7311 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1771257234.65137 "c:/Users/alexa/OneDrive - Universidad de los andes/01_MA/02_masters/02_MLP/00_Taller/MLP_PSET_01/99_document/main.tex" "main.pdf" "main" 1771257239.85109 0
+["pdflatex"] 1771278416.93823 "c:/Users/alexa/OneDrive - Universidad de los andes/01_MA/02_masters/02_MLP/00_Taller/MLP_PSET_01/99_document/main.tex" "main.pdf" "main" 1771278451.23687 0
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc" 1748869073 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1748869076 4524 6bce29db5bc272ba5f332261583fee9c ""
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm" 1748869076 6880 f19b8995b61c334d78fc734065f6b4d4 ""
@@ -212,15 +212,15 @@
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1758739790 550760 d63d5524100d2b4608399d702acf7924 ""
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1758740270 2271530 3601a9285c8fbd278c8f55abb3388b53 ""
   "c:/Users/alexa/AppData/Roaming/TinyTeX/texmf.cnf" 1748869112 956 dbeceba109d3f7dd659079c9ad6f4ec2 ""
-  "c:/Users/alexa/OneDrive - Universidad de los andes/01_MA/02_masters/02_MLP/00_Taller/MLP_PSET_01/99_document/main.tex" 1771255876 4774 67259f63a5db1437c0649cd0750451fe ""
-  "figures/01_productividad_por_trabajador.png" 1771251040 269694 ffb3d583a165af7f54fc25fc646db4e4 ""
-  "figures/03_mapa_productividad_italia.png" 1771251040 1465021 130dc9de1f3cc7d99683ed09fbb5d0aa ""
-  "figures/04_italia_norte_vs_sur-paises.png" 1771251040 252169 7a9ccd03ece421ee191de8ccec8a1948 ""
-  "figures/05_italia_norte_vs_sur.png" 1771251040 331811 5e073bda7fe0774fbe0129cede8da647 ""
-  "main.aux" 1771257239 2318 74b92f592e52ec21c683bbc2e8fe7311 "pdflatex"
+  "c:/Users/alexa/OneDrive - Universidad de los andes/01_MA/02_masters/02_MLP/00_Taller/MLP_PSET_01/99_document/main.tex" 1771278418 4775 221578f986de980b9388fe49a9774587 ""
+  "figures/01_productividad_por_trabajador.png" 1771262233 269465 4e0d1ba7db4e21394325b65cb0579364 ""
+  "figures/03_mapa_productividad_italia.png" 1771262233 1465021 130dc9de1f3cc7d99683ed09fbb5d0aa ""
+  "figures/04_italia_norte_vs_sur-paises.png" 1771262233 252263 994aaa6ce9599304b0488a5ac4d0f314 ""
+  "figures/05_italia_norte_vs_sur.png" 1771262233 333182 eb8e76e4db092472724b1a9ce1ef371e ""
+  "main.aux" 1771278449 2318 74b92f592e52ec21c683bbc2e8fe7311 "pdflatex"
   "main.bbl" 1771255891 1251 b6c9b8875f36c59b41ee9a6987bbdf8d "bibtex main"
-  "main.out" 1771257239 417 062a8ac950c41d6980178f6c619b0c6a "pdflatex"
-  "main.tex" 1771255876 4774 67259f63a5db1437c0649cd0750451fe ""
+  "main.out" 1771278449 417 062a8ac950c41d6980178f6c619b0c6a "pdflatex"
+  "main.tex" 1771278418 4775 221578f986de980b9388fe49a9774587 ""
   "sections/01_Contexto.tex" 1771257061 2235 a9f60fb2762cf7b2d06a782356c42c92 ""
   "sections/02_datos.tex" 1771257061 2359 c3a886f75e5c7fff389fe42279a407c5 ""
   "sections/03_resultado.tex" 1771257234 3992 74d7899c9d0faa90c0138dc50b71db6d ""
