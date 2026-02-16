@@ -29,6 +29,10 @@ inv = get_eurostat("nama_10r_2gfcf", time_format="num") |>
       clean_names() |> 
       filter(geo %in% nuts$id)
 
+deflactor = get_eurostat(id = "nama_10_gdp", time_format = "num") |> 
+       filter(substr(geo, 1, 2) %in% c("FR", "DE", "ES", "IT"))
+            
+
 #================================#
 # 02 export data
 #================================#
@@ -38,4 +42,4 @@ export(emp, "01_data/output/02_personas_empleadas.rds")
 export(hours, "01_data/output/02_hours.rds")
 export(per, "01_data/output/02_personas.rds")
 export(inv, "01_data/output/02_capital.rds")
-
+export(deflactor, "01_data/output/02_deflactor.rds")

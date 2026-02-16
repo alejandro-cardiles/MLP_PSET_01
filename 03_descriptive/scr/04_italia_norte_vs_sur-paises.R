@@ -46,6 +46,14 @@ plot = ggplot(plot, aes(year, value, color = country)) +
                                 "Italia Norte" = "#2ca02c",  # Italy North (green)
                                 "Italia Sur" = "#d62728") )
 plot
+
+# diff 2019 it norte and al: 1.079692
+# diff 2019 it norte and fr: 1.017451
+
+# diff 2019 it sur and al: 1.346964
+# diff 2019 it sur and fr: 1.269316
+
+
 #=================#
 # Export
 #=================#

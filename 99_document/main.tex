@@ -1,4 +1,4 @@
-\documentclass[11pt,onecolumn]{article}
+ \documentclass[11pt,onecolumn]{article}
 
 % -------------------------------------------------
 % Page layout
@@ -39,6 +39,7 @@
 \usepackage{float}
 \usepackage{rotating}
 %\usepackage{rotfloat}
+\usepackage{wrapfig}
 
 % -------------------------------------------------
 % Spacing and structure
@@ -76,6 +77,13 @@
 \usepackage{lscape}
 \usepackage{pdflscape}
 \usepackage{multicol}
+
+% -------------------------------------------------
+% Language (Spanish captions: Figura, Tabla, etc.)
+% -------------------------------------------------
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+
 
 % -------------------------------------------------
 % TikZ
@@ -127,12 +135,12 @@
 % -------------------------------------------------
 % Title and authors
 % -------------------------------------------------
-\title{Italia.....%}
-\thanks{We thank ... All errors are our own.}}
+\title{Italia: La divergencia entre dos naciones}
+%\thanks{We thank ... All errors are our own.}}
 
 \author{
-Alejandro Cardiles\thanks{Department of Economics, University of Los Andes, Colombia.
-\href{mailto:a.cardilesh@uniandes.edu.co}{a.cardilesh@uniandes.edu.co}}
+Alejandro Cardiles\thanks{Department of Economics, University of Los Andes, Colombia. \href{mailto:a.cardilesh@uniandes.edu.co}{a.cardilesh@uniandes.edu.co}} 
+\thanks{Información y códigos disponibles para replicabilidad pueden ser encontrados en: \href{ttps://github.com/alejandro-cardiles/MLP_PSET_01.git}{GITHUB}}
 }
 
 \date{\today}
@@ -144,14 +152,14 @@ Alejandro Cardiles\thanks{Department of Economics, University of Los Andes, Colo
 \maketitle
 \thispagestyle{empty}
 
-\begin{abstract}
-\noindent
-\end{abstract}
+%\begin{abstract}
+%\noindent
+%\end{abstract}
 
 \medskip
 \begin{flushleft}
-\textbf{Keywords:} \\
-\textbf{JEL Classification:}
+%\textbf{Keywords:} \\
+%\textbf{JEL Classification:}
 \end{flushleft}
 
 \pagebreak
@@ -161,9 +169,9 @@ Alejandro Cardiles\thanks{Department of Economics, University of Los Andes, Colo
 % Sections
 %-----------------------%
 
-% \input{sections/01_contexto}
-% \input{sections/02_datos}
-% \input{sections/03_modelos}
-% \input{sections/04_resultados}
+\input{sections/01_contexto}
+\input{sections/02_datos}
+\input{sections/03_resultado.tex}
+\bibliography{sections/references}
 
 \end{document}

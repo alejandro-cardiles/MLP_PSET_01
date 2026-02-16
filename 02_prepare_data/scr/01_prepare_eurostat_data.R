@@ -10,6 +10,7 @@ hours = import("01_data/output/02_hours.rds")
 pee_working = import("01_data/output/02_personas_empleadas.rds")
 pee = import("01_data/output/02_personas.rds")
 inv = import("01_data/output/02_capital.rds")
+deflactor = import("01_data/output/02_deflactor.rds")
 
 #================================#
 # 02 prepare data
@@ -21,10 +22,10 @@ nuts = nuts |>
 
 ## select values in pps and eur
 gpd = gpd |> 
-     filter(unit %in% c("MIO_PPS_EU27_2020", "MIO_EUR")) |>
+     filter(unit %in% c("MIO_PPS_EU27_2020")) |>
      mutate(values = values*1e6) |> 
      pivot_wider(names_from = unit, values_from = values) |> 
-     select(nuts_id = geo, year = time_period, gpd_eur = MIO_EUR, gpd_pps_2020_values = MIO_PPS_EU27_2020) |> 
+     select(nuts_id = geo, year = time_period, gpd_pps_2020_values = MIO_PPS_EU27_2020) |> 
      right_join(x = nuts |> select(nuts_id, cntr_code))
 
 ## select total hours worked
@@ -50,11 +51,23 @@ pee = pee |>
       rename(female = F, male= M, total = T)|> 
       right_join(x = nuts |> select(nuts_id, cntr_code))
  
-## select caoital in million eur
+## select capital and convert to constant by deflactor
 inv = inv |>       
       filter(sector == "S1", currency == "MIO_EUR", nace_r2 == "TOTAL") |> 
-      select(nuts_id = geo, year = time_period, capital_eur = values) 
+      select(nuts_id = geo, year = time_period, capital_eur = values) |>
+      mutate(capital_eur = capital_eur*1e6) |> 
+      mutate(cntr_code = str_extract(string = nuts_id, "[:alpha:]{2}")) 
 
+deflactor = deflactor |> 
+            clean_names() |> 
+            filter(unit == "PD20_EUR" &  na_item == "P51G") |> 
+            select(cntr_code = geo, year = time_period, deflactor = values) 
+
+inv = left_join(inv, deflactor, by = c("cntr_code","year")) 
+
+inv = inv |> 
+      mutate(capital = capital_eur/deflactor) |> 
+      select(nuts_id, year, capital)
 
 # join
 data = full_join(gpd, hours) |> 
