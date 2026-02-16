@@ -16,14 +16,16 @@ La lógica del proyecto está organizada por **etapas**. En cada etapa encontrar
 <!------------------------------>
 ## Estructura:
 
+<pre>
 MLP_PSET_01/
-├─ 01_data/ # Etapa 1: importación y construcción de insumos
-├─ 02_prepare_data/ # Etapa 2: limpieza, armonización y preparación
-├─ 03_descriptive/ # Etapa 3: análisis descriptivo y visualizaciones
-├─ 99_document/ reporte (si aplica)
-├─ 00_packages.R # Carga/instalación de paquetes
-├─ RUN_ME.R 
+├─ 01_data/          # Etapa 1: importación y construcción de insumos
+├─ 02_prepare_data/  # Etapa 2: limpieza, armonización y preparación
+├─ 03_descriptive/   # Etapa 3: análisis descriptivo y visualizaciones
+├─ 99_document/      # Reporte (si aplica)
+├─ 00_packages.R     # Carga/instalación de paquetes
+├─ RUN_ME.R          # Ejecuta todos los scripts del proyecto
 └─ README.md
+</pre>
 
 
 <!------------------------------>
